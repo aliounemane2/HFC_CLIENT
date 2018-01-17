@@ -1,0 +1,322 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elite Fitness Club </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</head>
+<body>
+
+        <br/>
+        <form method="post" enctype="multipart/form-data" action="{% url 'saveinfo' %}">{% csrf_token %}
+            <div style="margin-left:40px;">
+                <div style="color:orange;">
+                    <img src="{% static 'Elite.png' %}" class="bg"/> <h3 style="float:right;text-align:center;"> Elite Fitness Club</h3>
+                </div>
+
+            <div class="form-group row" >
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-6 col-form-label">civilite </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-6">
+                    <!-- <input class="form-control" type="text" value="" name="civilite" id="civilite"> -->
+                      <select id="civilite" name="civilite">
+                            <option value="Madame">Madame</option>
+                            <option value="Mademoiselle">Mademoiselle</option>
+                            <option value="Monsieur" selected="selected">Monsieur</option>
+                      </select>
+
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-form-label">Prenom</label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                    <input class="form-control" type="text" value="" name="prenom" id="prenom">
+                  </div>
+            </div>
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label">Nom</label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="nom" name="nom">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label">Date de Naissance</label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="date" value="" name="dateNaiss" id="dateNaiss">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label">Lieu de Naissance </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="lieuNaiss" name="lieuNaiss">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> Téléphone </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="telephone" id="telephone">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label">Adresse </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="adresse" name="adresse">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> Situation Matrimoniale </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <!--  <input class="form-control" type="text" value="" name="situation_matrimoniale" id="situation_matrimoniale"> -->
+                       <select id="situation_matrimoniale" name="situation_matrimoniale">
+                            <option value="Celibataire">Celibataire</option>
+                            <option value="Marié(e)">Marié(e)</option>
+                            <option value="Divorcé(e)">Divorcé(e)</option>
+                            <option value="Veuve">Veuve</option>
+                      </select>
+                  </div>
+            </div>
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label">Ville  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="ville" name="ville">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> E-mail </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="email" id="email">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label">Profession  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="profession" name="profession">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> Medecin Traitant </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="medecin_traitant" id="medecin_traitant">
+                  </div>
+            </div>
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Victime d'un grave accident  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="victime_grave_accident" name="victime_grave_accident">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> Autorisation médicale pour programme de fitness et musculation de HFC </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="autorisation_medicale_pour_programme_de_fitness_et_muscula" id="autorisation_medicale_pour_programme_de_fitness_et_muscula">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Autorisation médicale pour programme de détente de HFC  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="autorisation_medicale_pour_programme_de_detente_de_hfc" name="autorisation_medicale_pour_programme_de_detente_de_hfc">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> Sport pratiqué dans le passé </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="sport_pratique_dans_le_passe" id="sport_pratique_dans_le_passe">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Sport pratiqué actuellement  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="sport_pratique_actuellement" name="sport_pratique_actuellement">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> Etat de santé </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="etat_de_sante" id="etat_de_sante">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Problémes majeures à signaler impérativement  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="problemes_majeurs_a_signaler_imperativement" name="problemes_majeurs_a_signaler_imperativement">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label"> Opération ou maladies graves à signaler(cardiaque ou musculaire) </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="maladies_graves_a_signaler" id="maladies_graves_a_signaler">
+                  </div>
+            </div>
+
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Problémes de poids ou de circulation sanguine </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="problemes_de_poids" name="problemes_de_poids">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label">  Coordonnées completes de votre medecin </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="coordonnees_completes_de_votre_medecin" id="coordonnees_completes_de_votre_medecin">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Poids (Kg) </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="poids" name="poids">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label">   Taille (m) </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="taille" id="taille">
+                  </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Rythme Cardiaque </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="rythme_cardiaque" name="rythme_cardiaque">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label">   Tension </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="tension" id="tension">
+                  </div>
+            </div>
+
+
+            <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Besoins spécifiques et attentes chez HFC </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="besoin_specifique_et_attente_chez_hfc" name="besoin_specifique_et_attente_chez_hfc">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label">   Souhaitez vous un conseil et suivi personnalisés </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="souhaitez_vous_un_conseil_et_suivi_pers" id="souhaitez_vous_un_conseil_et_suivi_pers">
+                  </div>
+            </div>
+
+
+             <div class="form-group row">
+                  <label for="example-text-input" class="col-lg-2 col-md-2 col-sm-2  col-xs-2 col-form-label"> Souhaitez vous être suivi par un professeur précis chez HFC  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3  col-xs-3">
+                    <input class="form-control" type="text" value="" id="souhaitez_vous_etre_suivi_par_un_professeur" name="souhaitez_vous_etre_suivi_par_un_professeur">
+                  </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1  col-xs-1"></div>
+
+                    <label for="example-search-input" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-form-label">   Comment avez-vous connu HFC ?  </label>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <input class="form-control" type="text" value="" name="comment_avez_vous_connu_hfc" id="comment_avez_vous_connu_hfc">
+                  </div>
+            </div>
+
+            <div class="row" style="text-align:center;">
+                <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12">
+
+                    <button class="btn btn-success " > Enregistrer</button>
+                    <button class="btn btn-danger"> Annuler</button>
+                </div>
+
+
+            </div>
+
+
+
+
+
+</div>
+
+
+
+
+        </form>
+
+
+
+
+</body>
+</html>
+
+<script>
+
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+
+        console.log(" VALEUR DD "+url);
+
+        var nom = url.searchParams.get("nom");
+        console.log(" Le nom  "+nom);
+        document.getElementById("nom").value = nom;
+
+
+        var prenom = url.searchParams.get("prenom");
+        console.log(" Le nom  "+prenom);
+        document.getElementById("prenom").value = prenom;
+
+
+
+        var profession = url.searchParams.get("profession");
+        console.log(" Le nom  "+profession);
+        document.getElementById("profession").value = profession;
+
+
+        var civilite = url.searchParams.get("civilite");
+        console.log(" Le civilite  "+civilite);
+        document.getElementById("civilite").value = civilite;
+
+
+        var dateNaiss = url.searchParams.get("dateNaiss");
+        console.log(" Le dateNaiss  "+dateNaiss);
+        document.getElementById("dateNaiss").value = dateNaiss;
+
+
+        var email = url.searchParams.get("email");
+        console.log(" Le email  "+email);
+        document.getElementById("email").value = email;
+
+
+        var telephone = url.searchParams.get("telephone");
+        console.log(" Le telephone  "+telephone);
+        document.getElementById("telephone").value = telephone;
+
+
+</script>
+
